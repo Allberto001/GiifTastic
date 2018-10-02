@@ -18,11 +18,10 @@ input {
     margin: 10px;
 }
 #gifArea {
-	clear: both;
+    text-align: center;
 	display: inline;
 	flex-wrap: wrap;
 }
-.animalGiphy {
+/*.animalGiphy {
 	padding: 2px;
-
-}
+}*/
