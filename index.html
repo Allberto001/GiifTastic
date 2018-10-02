@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" >
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" >
+    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
     <script src="assets/js/app.js"></script>
 </head>
 <body>
-    <div class="container">
+    
+      <div class="safari">
         <h1>Animal Gif World</h1>
     
         <!--when they add another animal it will get dumped here -->
@@ -23,14 +25,14 @@
           <!-- Button triggers new animal to be added -->
           <input id="add-animal" type="submit" value="Add Animal">
         </form>
-        
+      </div>  
         <!-- animals will get dumped here -->
         <div id="gifArea"></div>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
           // Initial array of animals
-          var animalsList = ["Lion", "Zebra", "Turtle", "Vulture"];
+          var animalsList = ["Lion", "Zebra", "Turtle", "Elephant"];
         
         // this will display an action when you click the buttons of the animal name
           function alertanimalName() {
@@ -114,6 +116,6 @@
           // Calling the renderButtons function at least once to display the initial list of movies
           renderButtons();
         </script>
-      </div> 
+       
 </body>
 </html>
