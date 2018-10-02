@@ -23,16 +23,51 @@
           <!-- Button triggers new animal to be added -->
           <input id="add-animal" type="submit" value="Add Animal">
         </form>
+        
+        <!-- animals will get dumped here -->
+        <div id="gifArea"></div>
     
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript">
           // Initial array of animals
-          var animalsList = ["Girrafe", "Zebra", "Turtle", "Vulture"];
+          var animalsList = ["Lion", "Zebra", "Turtle", "Vulture"];
         
+        // this will display an action when you click the buttons of the animal name
           function alertanimalName() {
           var animalName = $(this).attr("data-name");
+          var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animalName + "&limit=10&api_key=9K1cfe84RJYfAUHVycCHLetbUBnTHtAo";
+        
+          //var api_key ="&api_key=9K1cfe84RJYfAUHVycCHLetbUBnTHtAo";
+          //var query = "&q=animals";
 
-          alert(animalName);
+          $.ajax({
+         url: queryURL,
+         method: "GET"
+          }).then(function(response) {
+
+            var results = response.data;
+        	console.log(results);
+        	for (var i = 0; i < results.length; i++) {
+        	
+        	var showDiv = $("<div class='gif'>");
+
+        	var rating = results[i].rating;
+        	var defaultAnimatedSrc = results[i].images.fixed_height.url;
+        	var staticSrc = results[i].images.fixed_height_still.url;
+        	var showImage = $("<img>");
+        	var p = $("<p>").text("Rating: " + rating);
+
+        	showImage.attr("src", staticSrc);
+        	showImage.addClass("animalGiphy");
+        	showImage.attr("data-state", "still");
+        	showImage.attr("data-still", staticSrc);
+        	showImage.attr("data-animate", defaultAnimatedSrc);
+        	showDiv.append(p);
+        	showDiv.append(showImage);
+
+        	$("#gifArea").prepend(showDiv);
+          }
+          });
           }
           
           // Function for displaying movie data
