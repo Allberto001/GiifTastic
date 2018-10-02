@@ -23,6 +23,7 @@ input {
   margin: 10px;
 }
 #animal-form{
+    color: gray;
     font-family: 'Chicle', cursive;
     text-align: center;
     margin: 10px;
