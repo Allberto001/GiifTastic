@@ -23,7 +23,6 @@ input {
   margin: 10px;
 }
 #animal-form{
-    color: gray;
     font-family: 'Chicle', cursive;
     text-align: center;
     margin: 10px;
@@ -31,6 +30,7 @@ input {
 #gifArea {
     color:white;
     text-align: center;
+    clear: both;
 	display: inline;
 	flex-wrap: wrap;
 }
